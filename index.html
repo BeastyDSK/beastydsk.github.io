@@ -1,77 +1,156 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <title>Privacy Policy - Network Selector</title>
-        <style>
-            body {
-                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-                padding: 1em;
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy</title>
+    <style>
+        :root {
+            --bg-color: #f9fafb;
+            --card-bg: #ffffff;
+            --text-primary: #111827;
+            --text-secondary: #4b5563;
+            --accent-color: #2563eb;
+            --border-color: #e5e7eb;
+            --warning-bg: #fff7ed;
+            --warning-border: #fdba74;
+            --warning-text: #9a3412;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #111827;
+                --card-bg: #1f2937;
+                --text-primary: #f9fafb;
+                --text-secondary: #9ca3af;
+                --accent-color: #60a5fa;
+                --border-color: #374151;
+                --warning-bg: #431407;
+                --warning-border: #7c2d12;
+                --warning-text: #ffedd5;
             }
-        </style>
-    </head>
-    <body>
-        <h1>Privacy Policy</h1>
-        <p>
-        This privacy policy applies to the 5G/4G Only Network Mode app (hereby referred to as "Application") for mobile devices
-        that was created by Krishnaprasanth as an Ad Supported service. This service is intended for use "AS IS".
-        </p>
+        }
 
-        <h3>Information Collection and Use</h3>
-        <p>
-        The Application does not collect or transmit any personally identifiable information about its users to the
-        developer.
-        </p>
-        <p>However, the Application uses third-party services that may collect information used to identify you.</p>
-        <div>
-            <p>Link to privacy policy of third party service providers used by the app</p>
-            <ul>
-                <li>
-                <a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank" rel="noopener noreferrer">AdMob</a
-                >
-                </li>
-            </ul>
-        </div>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
 
-        <h3>Log Data</h3>
-        <p>
-        I want to inform you that whenever you use my Service, in a case of an error in the app I collect data and
-        information (through third party products) on your phone called Log Data. This Log Data may include information
-        such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of
-        the app when utilizing my Service, the time and date of your use of the Service, and other statistics.
-        </p>
-        <br />
-        <strong>Changes to This Privacy Policy</strong>
-        <p>
-        I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any
-        changes. I will notify you of any changes by posting the new Privacy Policy on this page.
-        </p>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 1px solid var(--border-color);
+        }
 
-        <h3>Network Speed Test (NDT)</h3>
-        <p>
-            Our app includes a Speed Test feature powered by the Network Diagnostic Tool (NDT) protocol provided by
-            <strong>Measurement Lab (M-Lab)</strong>.
-        </p>
-        <p>When you initiate a speed test, certain data is collected and transmitted to M-Lab's servers, including:</p>
-        <ul>
-            <li>Your IP Address</li>
-            <li>Network performance metrics (Download/Upload speeds, latency, etc.)</li>
-        </ul>
-        <p>
-        <strong>Important:</strong> M-Lab is an open-source research project. In order to support global internet
-        research, M-Lab publishes all test results, including your IP address, in their public database for open access.
-        By using the speed test feature, you consent to the collection and public release of this data.
-        </p>
-        <p>
-            For more information on how M-Lab handles your data, please review the
-            <a href="https://www.measurementlab.net/privacy/" target="_blank">M-Lab Privacy Policy</a>.
-        </p>
+        h1 { font-size: 2.25rem; margin-bottom: 0.5rem; color: var(--text-primary); }
+        h2 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+        h3 { font-size: 1.1rem; margin-top: 1.5rem; font-weight: 600; }
+        p, ul { color: var(--text-secondary); margin-bottom: 1rem; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 0.5rem; }
+        a { color: var(--accent-color); text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
+        
+        .last-updated {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            display: block;
+        }
 
-         <h3>Contact Us</h3>
-        <p>
-            If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at
-            <a href="mailto:dhawansaran14346@gmail.com">here</a>
-        </p>
-    </body>
+        /* Special Box for the M-Lab / NDT7 Disclosure */
+        .notice-box {
+            background-color: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            color: var(--warning-text);
+        }
+        .notice-box strong { display: block; margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Privacy Policy</h1>
+    <span class="last-updated">Last updated: January 23, 2026</span>
+
+    <p>This Privacy Policy applies to the <strong>5G/4G Only Network Mode</strong> app (hereby referred to as "Application") created by <strong>Krishnaprasanth</strong> (hereby referred to as "Service Provider"). This service is intended for use "AS IS".</p>
+
+    <h2>1. Network Diagnostic Tests (NDT7) & M-Lab</h2>
+    <div class="notice-box">
+        <strong>⚠️ Critical Notice Regarding Speed Test Data</strong>
+        This Application runs network performance tests (Speed Tests) using the <strong>NDT7 protocol</strong> maintained by <strong>Measurement Lab (M-Lab)</strong>.
+    </div>
+    <p>When you run a speed test in this Application, the test is conducted between your device and an M-Lab server. M-Lab collects specific data to promote scientific research on Internet performance.</p>
+    
+    <h3>What is collected by M-Lab?</h3>
+    <ul>
+        <li><strong>IP Address:</strong> The public-facing Internet Protocol (IP) address of your device is collected to understand network topology.</li>
+        <li><strong>Performance Data:</strong> Speed, latency, jitter, and other network diagnostic metrics.</li>
+    </ul>
+
+    <h3>Is this data private?</h3>
+    <p><strong>No.</strong> To support open Internet research, M-Lab <strong>publishes all test data publicly</strong>. By running a test, you acknowledge that your IP address and test results will be included in M-Lab's public dataset. M-Lab does not collect personal information like your name, email, or street address.</p>
+    <p>For more details, please review the <a href="https://www.measurementlab.net/privacy/" target="_blank" rel="noopener">M-Lab Privacy Policy</a>.</p>
+
+    <h2>2. Advertising & Third-Party Data</h2>
+    <p>The Application uses third-party services to display advertisements and support app functionality. These services may collect information used to identify you (Advertising ID) and serve personalized ads.</p>
+    
+    <p>Links to the privacy policies of the third-party service providers used by the Application:</p>
+    <ul>
+        <li>
+            <strong>Unity Ads</strong><br>
+            Collects device IDs, IP addresses, and game data to provide personalized ads and analytics.<br>
+            <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" target="_blank" rel="noopener">Unity Privacy Policy</a>
+        </li>
+        <li>
+            <strong>AdMob (Google)</strong><br>
+            Collects data to improve ad relevance and measure performance.<br>
+            <a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank" rel="noopener">AdMob Privacy Policy</a>
+        </li>
+        <li>
+            <strong>Google Play Services</strong><br>
+            Used for In-App Updates, Reviews, and core libraries.<br>
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>
+        </li>
+    </ul>
+
+    <h2>3. Information Collection and Use</h2>
+    <p>Apart from the NDT7 data (managed by M-Lab) and Advertising data (managed by Ad Networks), the Service Provider collects:</p>
+    <ul>
+        <li><strong>Crash Logs:</strong> Data regarding app failures to help us fix bugs (via Google Play Console).</li>
+        <li><strong>App Activity:</strong> Anonymous usage data to understand how features are used.</li>
+    </ul>
+
+    <h2>4. Location Data</h2>
+    <p>The Application does not request precise GPS location permissions. However:</p>
+    <ul>
+        <li><strong>M-Lab</strong> uses your IP address to infer your approximate location for network research.</li>
+        <li><strong>Unity Ads & AdMob</strong> use your IP address to serve location-relevant advertisements (e.g., ads for stores in your city).</li>
+    </ul>
+
+    <h2>5. Cookies</h2>
+    <p>The Application does not use cookies explicitly. However, third-party code (AdMob, Unity Ads) may use cookies or similar technologies to collect information to improve their services. You have the option to either accept or refuse these cookies via your device settings.</p>
+
+    <h2>6. Children’s Privacy</h2>
+    <p>These Services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we will be able to do the necessary actions.</p>
+
+    <h2>7. Changes to This Privacy Policy</h2>
+    <p>We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+
+    <h2>8. Contact Us</h2>
+    <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at <strong>dhawansaran14346@gmail.com</strong>.</p>
+</div>
+
+</body>
 </html>
