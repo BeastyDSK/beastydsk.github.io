@@ -3,179 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - 5G/4G Only Network Mode</title>
+    <title>NeuraCircuit Dev | 5G/4G Only Network Mode</title>
     <style>
         :root {
-            --bg-color: #f9fafb;
-            --card-bg: #ffffff;
-            --text-primary: #111827;
-            --text-secondary: #4b5563;
-            --accent-color: #2563eb;
-            --border-color: #e5e7eb;
-            --warning-bg: #fff7ed;
-            --warning-border: #fdba74;
-            --warning-text: #9a3412;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg-color: #111827;
-                --card-bg: #1f2937;
-                --text-primary: #f9fafb;
-                --text-secondary: #9ca3af;
-                --accent-color: #60a5fa;
-                --border-color: #374151;
-                --warning-bg: #431407;
-                --warning-border: #7c2d12;
-                --warning-text: #ffedd5;
-            }
+            --primary-color: #007bff; /* Android Blue */
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --container-width: 800px;
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--bg-color);
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: #fff;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
         }
 
         .container {
-            max-width: 800px;
+            max-width: var(--container-width);
             margin: 0 auto;
-            background: var(--card-bg);
-            padding: 40px;
+            padding: 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: white;
             border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            border: 1px solid var(--border-color);
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
-        h1 { font-size: 2.25rem; margin-bottom: 0.5rem; color: var(--text-primary); }
-        h2 { font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
-        h3 { font-size: 1.1rem; margin-top: 1.5rem; font-weight: 600; }
-        p, ul { color: var(--text-secondary); margin-bottom: 1rem; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 0.8rem; }
-        a { color: var(--accent-color); text-decoration: none; font-weight: 500; }
-        a:hover { text-decoration: underline; }
-        
-        .last-updated {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            display: block;
+        .hero h1 {
+            margin-top: 0;
+            color: #2c3e50;
         }
 
-        /* Special Box for the M-Lab / NDT7 Disclosure */
-        .notice-box {
-            background-color: var(--warning-bg);
-            border-left: 4px solid var(--warning-border);
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 4px;
-            color: var(--warning-text);
+        .hero p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 10px auto 20px;
         }
-        .notice-box strong { display: block; margin-bottom: 8px; }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        ul li:last-child {
+            border-bottom: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Privacy Policy</h1>
-    <span class="last-updated">Last updated: January 30, 2026</span>
+    <header>
+        <div class="container">
+            <strong>NeuraCircuit Dev</strong>
+        </div>
+    </header>
 
-    <p>This Privacy Policy applies to the <strong>5G/4G Only Network Mode</strong> app (hereby referred to as "Application") created by <strong>Krishnaprasanth</strong> (hereby referred to as "Service Provider"). This service is intended for use "AS IS".</p>
+    <div class="container">
+        
+        <div class="hero">
+            <h1>5G/4G Only Network Mode</h1>
+            <p>Take control of your mobile network connection. Force your device to stay on 5G, LTE, or specific network modes for faster speeds and better stability.</p>
+            <a href="https://play.google.com/store/apps/details?id=band.indicator.pro" class="btn" target="_blank">View on Google Play</a>
+        </div>
 
-    <h2>1. Network Diagnostic Tests (NDT7) & M-Lab</h2>
-    <div class="notice-box">
-        <strong>⚠️ Critical Notice Regarding Speed Test Data</strong>
-        This Application runs network performance tests (Speed Tests) using the <strong>NDT7 protocol</strong> maintained by <strong>Measurement Lab (M-Lab)</strong>.
+        <div class="section">
+            <h2>About the Developer</h2>
+            <p>
+                Hi, I am <strong>Krishnaprasanth</strong>, the lead developer at NeuraCircuit Dev. 
+            </p>
+            <p>
+                We specialize in creating utility applications for Android that unlock hidden system features and improve device performance. Our goal is to provide simple, effective tools that give users more control over their hardware.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Force Network Mode:</strong> Lock your phone to 5G, 4G LTE to prevent auto-switching to slower networks.</li>
+                <li><strong>Hidden Settings:</strong> Access the advanced Android "Radio Info" menu not typically available in settings.</li>
+                <li><strong>Internet Speed Test:</strong> Check your real-time download and upload speeds instantly.</li>
+                <li><strong>Device Compatibility:</strong> Optimized for major Android devices including Samsung, Xiaomi, and more.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Contact Us</h2>
+            <p>Have questions, feedback, or need support? We are here to help.</p>
+            <p>
+                <strong>Email:</strong> <a href="mailto:dhawansaran14346@gmail.com">dhawansaran14346@gmail.com</a>
+            </p>
+            <p>
+                <strong>Address:</strong> Tamil Nadu, India
+            </p>
+        </div>
+
     </div>
-    <p>When you run a speed test in this Application, the test is conducted between your device and an M-Lab server. M-Lab collects specific data to promote scientific research on Internet performance.</p>
-    
-    <h3>What is collected by M-Lab?</h3>
-    <ul>
-        <li><strong>IP Address:</strong> The public-facing Internet Protocol (IP) address of your device is collected to understand network topology.</li>
-        <li><strong>Performance Data:</strong> Speed, latency, jitter, and other network diagnostic metrics.</li>
-    </ul>
 
-    <h3>Is this data private?</h3>
-    <p><strong>No.</strong> To support open Internet research, M-Lab <strong>publishes all test data publicly</strong> under a Creative Commons license. By running a test, you acknowledge that your IP address and test results will be included in M-Lab's public dataset.</p>
-    <p><strong>GDPR/Data Deletion Exception:</strong> Because M-Lab is a public scientific archive, test results (including IP addresses) are permanent. Once a test is completed, <strong>we cannot delete the data</strong> from M-Lab's dataset, even if you revoke your consent later. Revoking consent in the app will only prevent <em>future</em> tests from being shared.</p>
-    <p>For more details, review the <a href="https://www.measurementlab.net/privacy/" target="_blank" rel="noopener">M-Lab Privacy Policy</a>.</p>
-
-    <h2>2. Third-Party Data Processing</h2>
-    <p>The Application uses third-party services that may collect information used to identify you. This includes Device IDs (Advertising ID, Android ID), IP addresses, and crash logs.</p>
-    
-    <h3>Advertising Partners</h3>
-    <p>These services may serve personalized ads based on your interests. You can opt-out of personalized advertising via your device settings or the consent menu within the app.</p>
-    <ul>
-        <li>
-            <strong>AdMob (Google)</strong><br>
-            Collects identifiers and location data to improve ad relevance.<br>
-            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>
-        </li>
-        <li>
-            <strong>Unity Ads</strong><br>
-            Collects device IDs, IP addresses, and game data for ads and analytics.<br>
-            <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" target="_blank" rel="noopener">Unity Privacy Policy</a>
-        </li>
-        <li>
-            <strong>InMobi</strong><br>
-            Collects device information, location (inferred from IP), and interaction data to serve ads.<br>
-            <a href="https://www.inmobi.com/privacy-policy/" target="_blank" rel="noopener">InMobi Privacy Policy</a>
-        </li>
-    </ul>
-
-    <h3>Analytics & Stability</h3>
-    <ul>
-        <li>
-            <strong>Google Analytics for Firebase</strong><br>
-            Used to analyze how users interact with the app (e.g., screens visited, buttons clicked). This data is anonymized.<br>
-            <a href="https://firebase.google.com/policies/analytics" target="_blank" rel="noopener">Firebase Analytics Policy</a>
-        </li>
-        <li>
-            <strong>Firebase Crashlytics</strong><br>
-            Collects crash reports, stack traces, and Installation UUIDs to help us fix bugs and improve app stability. This data helps us identify why the app may have crashed on your specific device model.<br>
-            <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy & Security</a>
-        </li>
-    </ul>
-
-    <h2>3. GDPR Rights (European Union & UK)</h2>
-    <p>If you are located in the EEA or UK, you have specific rights regarding your personal data:</p>
-    <ul>
-        <li><strong>Right to Access:</strong> You may request copies of your personal data.</li>
-        <li><strong>Right to Rectification:</strong> You may request that we correct any information you believe is inaccurate.</li>
-        <li><strong>Right to Erasure:</strong> You may request that we erase your personal data, under certain conditions. <em>Note: This does not apply to M-Lab public data as it is archived for scientific research.</em></li>
-        <li><strong>Right to Restrict Processing:</strong> You have the right to request that we restrict the processing of your personal data.</li>
-        <li><strong>Right to Withdraw Consent:</strong> You can withdraw your consent for personalized ads at any time via the app settings.</li>
-    </ul>
-    <p>To exercise these rights, please contact us at the email provided below.</p>
-
-    <h2>4. California Privacy Rights (CCPA/CPRA)</h2>
-    <p>If you are a California resident, you have the right to:</p>
-    <ul>
-        <li>Know what personal data is being collected about you.</li>
-        <li>Request deletion of your personal data.</li>
-        <li><strong>Opt-out of the "Sale" of Personal Data:</strong> While we do not sell your personal data for money, allowing advertising networks (AdMob, Unity, InMobi) to collect data for personalized ads may be considered a "sale" or "sharing" under California law. You may opt out of this via your device settings (Settings > Privacy > Ads > Delete Advertising ID).</li>
-    </ul>
-
-    <h2>5. Location Data</h2>
-    <p>The Application does not request precise GPS location permissions (ACCESS_FINE_LOCATION). However:</p>
-    <ul>
-        <li><strong>M-Lab</strong> uses your IP address to infer your approximate location for network research.</li>
-        <li><strong>Ad Networks (AdMob, Unity, InMobi)</strong> use your IP address to serve location-relevant advertisements (e.g., ads for stores in your city).</li>
-    </ul>
-
-    <h2>6. Children’s Privacy</h2>
-    <p>These Services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. In the case of AdMob, Unity, and InMobi, we flag requests as "not directed to children" where applicable. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we will be able to do the necessary actions.</p>
-
-    <h2>7. Changes to This Privacy Policy</h2>
-    <p>We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
-
-    <h2>8. Contact Us</h2>
-    <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at <strong>dhawansaran14346@gmail.com</strong>.</p>
-</div>
+    <footer>
+        <p>&copy; 2026 NeuraCircuit Dev. All rights reserved.</p>
+        <p>
+            <a href="/">Privacy Policy</a>
+        </p>
+    </footer>
 
 </body>
 </html>
