@@ -1,168 +1,389 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeuraCircuit Dev | 5G/4G Only Network Mode</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>NeuraCircuit Dev | Android Apps & Games</title>
+
     <style>
+      :root {
+        --bg-color: #f9fafb;
+        --card-bg: #ffffff;
+        --text-primary: #111827;
+        --text-secondary: #4b5563;
+        --accent-color: #2563eb;
+        --border-color: #e5e7eb;
+      }
+
+      @media (prefers-color-scheme: dark) {
         :root {
-            --primary-color: #007bff; /* Android Blue */
-            --bg-color: #f8f9fa;
-            --text-color: #333;
-            --container-width: 800px;
+          --bg-color: #111827;
+          --card-bg: #1f2937;
+          --text-primary: #f9fafb;
+          --text-secondary: #9ca3af;
+          --accent-color: #60a5fa;
+          --border-color: #374151;
         }
+      }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-        }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background: var(--bg-color);
+        color: var(--text-primary);
+      }
 
-        header {
-            background-color: #fff;
-            padding: 20px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            text-align: center;
-        }
+      .container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 20px;
+      }
 
-        .container {
-            max-width: var(--container-width);
-            margin: 0 auto;
-            padding: 20px;
-        }
+      header {
+        text-align: center;
+        padding: 20px;
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
 
-        .hero {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: white;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
+      .hero {
+        text-align: center;
+        background: var(--card-bg);
+        padding: 50px 30px;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+      }
 
-        .hero h1 {
-            margin-top: 0;
-            color: #2c3e50;
-        }
+      .hero p {
+        color: var(--text-secondary);
+        max-width: 600px;
+        margin: auto;
+      }
 
-        .hero p {
-            font-size: 1.1rem;
-            color: #666;
-            max-width: 600px;
-            margin: 10px auto 20px;
-        }
+      .products {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 25px;
+      }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
+      .card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        padding: 25px;
+        border-radius: 12px;
+        text-align: center;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
 
-        .btn:hover {
-            background-color: #0056b3;
-        }
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+      }
 
-        .section {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
+      .icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 18px;
+        background: #d1d5db;
+        margin: auto;
+        margin-bottom: 15px;
+        object-fit: contain;
+      }
 
-        h2 {
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-            margin-top: 0;
-        }
+      .icon img {
+        width: 100%;
+        height: 100%;
+        border-radius: 18px;
+        display: block;
+      }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
+      .card p {
+        color: var(--text-secondary);
+      }
 
-        ul li {
-            padding: 8px 0;
-            border-bottom: 1px solid #f1f1f1;
-        }
+      .btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 18px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+      }
 
-        ul li:last-child {
-            border-bottom: none;
-        }
+      .primary {
+        background: var(--accent-color);
+        color: white;
+      }
 
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            color: #777;
-            font-size: 0.9rem;
-        }
+      .secondary {
+        border: 1px solid var(--border-color);
+        color: var(--text-primary);
+      }
 
-        footer a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
+      .play-badge {
+        margin-top: 12px;
+        width: 170px;
+      }
+
+      .section {
+        margin-top: 40px;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        padding: 30px;
+        border-radius: 12px;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 40px;
+        color: var(--text-secondary);
+      }
+
+      /* developer profile */
+
+      .dev-profile {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--accent-color);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 20px;
+      }
+
+      .role {
+        color: var(--text-secondary);
+        margin-top: -8px;
+      }
+
+      /* modal */
+
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+      }
+
+      .modal.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .modal-content {
+        background: var(--card-bg);
+        max-width: 600px;
+        padding: 30px;
+        border-radius: 12px;
+        transform: scale(0.95);
+        transition: transform 0.25s ease;
+      }
+
+      .modal.active .modal-content {
+        transform: scale(1);
+      }
+
+      .close {
+        float: right;
+        cursor: pointer;
+        font-size: 20px;
+      }
+
+      ul {
+        color: var(--text-secondary);
+      }
     </style>
-</head>
-<body>
+  </head>
 
-    <header>
-        <div class="container">
-            <strong>NeuraCircuit Dev</strong>
-        </div>
-    </header>
+  <body>
+    <header>NeuraCircuit Dev</header>
 
     <div class="container">
-        
-        <div class="hero">
-            <h1>5G/4G Only Network Mode</h1>
-            <p>Take control of your mobile network connection. Force your device to stay on 5G, LTE, or specific network modes for faster speeds and better stability.</p>
-            <a href="https://play.google.com/store/apps/details?id=band.indicator.pro" class="btn" target="_blank">View on Google Play</a>
+      <div class="hero">
+        <h1>Android Apps & Games</h1>
+
+        <p>
+          Tools and games designed to improve mobile experiences and give users more control over their Android devices.
+        </p>
+      </div>
+
+      <!-- PRODUCTS -->
+
+      <div class="products">
+        <div class="card">
+          <div class="icon">
+            <img src="/5g-4g-only-network-mode/icon.webp" />
+          </div>
+
+          <h3>5G/4G Only Network Mode</h3>
+
+          <p>Lock your device to LTE or NR mode for stable network connections and prevent automatic switching.</p>
+
+          <a class="btn secondary" onclick="openModal('network')">More Info</a>
+
+          <br />
+
+          <a href="https://play.google.com/store/apps/details?id=band.indicator.pro" target="_blank">
+            <img
+              class="play-badge"
+              src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+            />
+          </a>
         </div>
 
-        <div class="section">
-            <h2>About the Developer</h2>
-            <p>
-                Hi, I am <strong>Krishnaprasanth</strong>, the lead developer at NeuraCircuit Dev. 
-            </p>
-            <p>
-                We specialize in creating utility applications for Android that unlock hidden system features and improve device performance. Our goal is to provide simple, effective tools that give users more control over their hardware.
-            </p>
+        <div class="card">
+          <div class="icon">
+            <img src="/2048/icon.webp" />
+          </div>
+
+          <h3>2048</h3>
+
+          <p>A clean version of the classic 2048 puzzle game optimized for Android devices.</p>
+
+          <a class="btn secondary" onclick="openModal('game2048')">More Info</a>
+
+          <br />
+
+          <a href="https://play.google.com/store/apps/details?id=neuracircuit.dev.game2048" target="_blank">
+            <img
+              class="play-badge"
+              src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+            />
+          </a>
+        </div>
+      </div>
+
+      <!-- ABOUT -->
+
+      <div class="section">
+        <div class="dev-profile">
+          <div class="avatar">K</div>
+
+          <div>
+            <h2>Krishnaprasanth</h2>
+            <p class="role">Independent Android Developer • NeuraCircuit Dev</p>
+          </div>
         </div>
 
-        <div class="section">
-            <h2>Key Features</h2>
-            <ul>
-                <li><strong>Force Network Mode:</strong> Lock your phone to 5G, 4G LTE to prevent auto-switching to slower networks.</li>
-                <li><strong>Hidden Settings:</strong> Access the advanced Android "Radio Info" menu not typically available in settings.</li>
-                <li><strong>Internet Speed Test:</strong> Check your real-time download and upload speeds instantly.</li>
-                <li><strong>Device Compatibility:</strong> Optimized for major Android devices including Samsung, Xiaomi, and more.</li>
-            </ul>
-        </div>
+        <h3>About</h3>
 
-        <div class="section">
-            <h2>Contact Us</h2>
-            <p>Have questions, feedback, or need support? We are here to help.</p>
-            <p>
-                <strong>Email:</strong> <a href="mailto:neuracircuitdev@gmail.com">neuracircuitdev@gmail.com</a>
-            </p>
-            <p>
-                <strong>Address:</strong> Tamil Nadu, India
-            </p>
-        </div>
+        <p>Hi, I'm <strong>Krishnaprasanth</strong>, an independent Android developer behind NeuraCircuit Dev.</p>
 
+        <p>
+          I build Android apps that focus on utility, simplicity, and giving users more control over their devices. Many
+          Android devices have powerful features hidden deep inside system settings, and I enjoy creating tools that
+          make those features easier to access.
+        </p>
+
+        <p>
+          Alongside utility apps, I also build small games and experimental projects as a way to explore new ideas and
+          improve the Android experience.
+        </p>
+
+        <p>
+          All apps are designed, built, and maintained independently with a focus on performance, reliability, and
+          keeping things simple for users.
+        </p>
+
+        <p>Thanks for checking out my apps and supporting independent development.</p>
+      </div>
+
+      <!-- CONTACT -->
+
+      <div class="section">
+        <h2>Contact</h2>
+
+        <p>Email: neuracircuitdev@gmail.com</p>
+        <p>Location: Tamil Nadu, India</p>
+      </div>
+
+      <footer>© 2026 NeuraCircuit Dev</footer>
     </div>
 
-    <footer>
-        <p>&copy; 2026 NeuraCircuit Dev. All rights reserved.</p>
-    </footer>
+    <!-- MODALS -->
 
-</body>
+    <div id="modal-network" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">✕</span>
+
+        <h2>5G/4G Only Network Mode</h2>
+
+        <p>Take control of your mobile network connection by forcing your device to stay on specific network modes.</p>
+
+        <ul>
+          <li>Force LTE or NR only mode</li>
+          <li>Prevent switching to slower networks</li>
+          <li>Access hidden Android radio settings</li>
+          <li>Built-in internet speed test</li>
+        </ul>
+
+        <a href="https://play.google.com/store/apps/details?id=band.indicator.pro" target="_blank">
+          <img
+            class="play-badge"
+            src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+          />
+        </a>
+      </div>
+    </div>
+
+    <div id="modal-game2048" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">✕</span>
+
+        <h2>2048</h2>
+
+        <p>
+          Combine tiles to reach the number 2048 in this classic puzzle game with smooth animations and a clean
+          Android-friendly design.
+        </p>
+
+        <a href="https://play.google.com/store/apps/details?id=neuracircuit.dev.game2048" target="_blank">
+          <img
+            class="play-badge"
+            src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+          />
+        </a>
+      </div>
+    </div>
+
+    <script>
+      function openModal(id) {
+        document.getElementById('modal-' + id).classList.add('active');
+      }
+
+      function closeModal() {
+        document.querySelectorAll('.modal').forEach((m) => {
+          m.classList.remove('active');
+        });
+      }
+
+      window.onclick = function (e) {
+        document.querySelectorAll('.modal').forEach((m) => {
+          if (e.target === m) closeModal();
+        });
+      };
+    </script>
+  </body>
 </html>
